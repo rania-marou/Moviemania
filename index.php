@@ -22,14 +22,6 @@
 	
 <h1>Home Page</h1>
 
-<div style="position:absolute; right:0; margin:60px 20px 0 0; padding:0 0 0 0; text-align:center;">
-	<canvas id="c6" class="CoolClock:chunkySwiss:50"></canvas>
-	
-	<div id="calendar" style="padding:50px 0 0 0;"></div>
-</div>
-
-
-
 <?php
     if(isset($_SESSION['SESS_MEMBER_LOGIN']) && $_SESSION['SESS_MEMBER_LOGIN'] =='1'){
         echo'<h2>Welcome '.$_SESSION['SESS_FIRST_NAME'].'</h2>';
@@ -57,12 +49,12 @@
     
     /* TOP RENTS */
     
-    $qry="SELECT movies.id, movies.title, movies.year, movies.trailer, count(rents.movie_id) AS counter FROM rents, movies WHERE rents.movie_id=movies.id GROUP BY movie_id ORDER BY counter DESC LIMIT 0, 5";
+    $qry="SELECT movies.id, movies.title, movies.year, movies.trailer, count(rents.movie_id) AS counter FROM rents, movies WHERE rents.movie_id=movies.id GROUP BY movie_id ORDER BY counter DESC LIMIT 0, 10";
 	$result=mysql_query($qry) or die(mysql_error());
 /*
     ♡♥❤★☆✩✯✰
 */
-	echo '<br /><div class="topMovies">❤ Top 5 movie rents ❤</div>
+	echo '<div class="left"><br /><div class="topMovies">❤ Top 10 movie rents ❤</div>
 	<table class="results" style="border:2px solid #19595C;">
 			<tr><td colspan="4"></td></tr>
 			<tr>
@@ -80,14 +72,14 @@
 		echo '<td style="text-align:center;">'.$movie['counter'].'</td>';
 		echo '</tr>';
 	}
-	echo '</table>';
+	echo '</table></div>';
 	
 	/* TOP RATED */
 	
-	$qry="SELECT movies.id, movies.title, movies.year, movies.trailer, AVG(rate) as rate FROM rates, movies WHERE rates.movie_id=movies.id GROUP BY movies.id ORDER BY rate DESC LIMIT 0, 5";
+	$qry="SELECT movies.id, movies.title, movies.year, movies.trailer, AVG(rate) as rate FROM rates, movies WHERE rates.movie_id=movies.id GROUP BY movies.id ORDER BY rate DESC LIMIT 0, 10";
 	$result=mysql_query($qry) or die(mysql_error());
     
-	echo '<br /><div class="topMovies">✩ Top 5 movie rates ✩</div>
+	echo '<div class="right"><br /><div class="topMovies">✩ Top 10 movie rates ✩</div>
 	<table class="results" style="border:2px solid #19595C;">
 			<tr><td colspan="4"></td></tr>
 			<tr>
@@ -107,7 +99,7 @@
 		echo '</td>';
 		echo '</tr>';
 	}
-	echo '</table>';
+	echo '</table></div><div class="clear"></div>';
 ?>
 
 </div>

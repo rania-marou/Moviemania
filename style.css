@@ -106,6 +106,9 @@ p.cont{
    padding-left:40px;
    background:#444444;
 }
+div.clear {
+    clear: both;
+}
 div.footer{
     margin-left:auto;
     margin-right:auto;
@@ -124,7 +127,7 @@ div.topMovies{
 	border-top:2px solid #19595C;
 	border-right:2px solid #19595C;
 	border-left:2px solid #19595C;
-	width:396px;
+	width:405px;
     border-top-left-radius:10px;
     -moz-border-top-left-radius: 10px;
     -webkit-border-top-left-radius: 10px;
@@ -134,8 +137,14 @@ div.topMovies{
     -webkit-border-top-right-radius: 10px;
     -khtml-border-top-right-radius: 10px;
 }
+div.left {
+    float: left;
+}
+div.right {
+    float: right;
+}
 table.results{
-	width:400px;
+	width:409px;
 }
 td.trailer{
     width:50px;
