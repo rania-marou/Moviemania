@@ -17,11 +17,11 @@
   <table width="300" border="0" align="center" cellpadding="2" cellspacing="0">
     <tr>
       <td width="112"><b>Login</b></td>
-      <td width="188"><input name="login" type="text" id="login" /></td>
+      <td width="188"><input name="login" type="text" id="login" value="admin" /></td>
     </tr>
     <tr>
       <td><b>Password</b></td>
-      <td><input name="password" type="password" id="password" /></td>
+      <td><input name="password" type="password" id="password" value="admin" /></td>
     </tr>
     <tr>
       <td><input type="submit" style="visibility:hidden;"/></td>
